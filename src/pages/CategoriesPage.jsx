@@ -14,7 +14,7 @@ const CategoriesPage = () => {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/products/categories");
+        const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/products/categories");
         const data = await res.json();
         setAllCategories(data);
 

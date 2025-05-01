@@ -22,7 +22,7 @@ const CartPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/cart", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -57,7 +57,7 @@ const CartPage = () => {
     if (newQty < 1) return;
 
     try {
-      await fetch("http://localhost:5000/api/cart/add", {
+      await fetch("https://serverecommerce-tgqs.onrender.com/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const CartPage = () => {
   const removeItem = async (productId) => {
     const token = localStorage.getItem("authToken");
     try {
-      await fetch(`http://localhost:5000/api/cart/remove/${productId}`, {
+      await fetch(`https://serverecommerce-tgqs.onrender.com/api/cart/remove/${productId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

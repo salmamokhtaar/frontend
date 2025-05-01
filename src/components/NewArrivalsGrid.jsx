@@ -14,7 +14,7 @@ const NewArrivalsGrid = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/products/tag/new");
+        const response = await fetch("https://serverecommerce-tgqs.onrender.com/api/products/tag/new");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -34,7 +34,7 @@ const NewArrivalsGrid = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/wishlist/add", {
+      const response = await fetch("https://serverecommerce-tgqs.onrender.com/api/wishlist/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const NewArrivalsGrid = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

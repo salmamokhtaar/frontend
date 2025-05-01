@@ -14,7 +14,7 @@ const WishlistPage = () => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/wishlist", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -34,7 +34,7 @@ const WishlistPage = () => {
   const removeFromWishlist = async (productId) => {
     const token = localStorage.getItem("authToken");
     try {
-      await fetch(`http://localhost:5000/api/wishlist/remove/${productId}`, {
+      await fetch(`https://serverecommerce-tgqs.onrender.com/api/wishlist/remove/${productId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -50,7 +50,7 @@ const WishlistPage = () => {
     if (!token) return toast.error("Please log in", { position: "bottom-left" });
 
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

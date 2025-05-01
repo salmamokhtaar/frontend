@@ -11,7 +11,7 @@ const CheckoutPage = () => {
     // Optional: fetch cart total
     const fetchTotal = async () => {
       const token = localStorage.getItem("authToken");
-      const res = await fetch("http://localhost:5000/api/cart", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -27,7 +27,7 @@ const CheckoutPage = () => {
     if (!phone) return toast.error("Enter phone number");
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders/checkout", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/orders/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

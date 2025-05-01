@@ -13,7 +13,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+        const res = await fetch(`https://serverecommerce-tgqs.onrender.com/api/products/${id}`);
         const data = await res.json();
         setProduct(data);
         setSelectedImage(data.image);
@@ -32,7 +32,7 @@ const ProductDetails = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const ProductDetails = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders/checkout", {
+      const res = await fetch("https://serverecommerce-tgqs.onrender.com/api/orders/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
